@@ -11,5 +11,7 @@
 
 module Product
   class ColorList < ActiveRecord::Base
+    has_many :product_colors
+    has_many :products,  through: :product_colors
   end
 end

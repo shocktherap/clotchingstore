@@ -13,7 +13,6 @@
 #  width             :integer
 #  weight            :integer
 #  merk_id           :integer
-#  color_id          :integer
 #  sub_category_id   :integer
 #  unit_price        :integer
 #  unit_cost         :integer
@@ -22,6 +21,11 @@
 
 module Product
   class Product < ActiveRecord::Base
+    belongs_to :sub_category
+    belongs_to :merk
 
+    has_many :discounts
+    has_many :colors
+    has_many :reviews
   end
 end

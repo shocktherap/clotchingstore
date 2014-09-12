@@ -8,6 +8,6 @@
 
 module Product
   class Merk < ActiveRecord::Base
-
+    has_many :products
   end
 end
