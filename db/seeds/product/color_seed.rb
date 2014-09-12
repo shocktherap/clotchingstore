@@ -4,11 +4,9 @@ class ColorSeed
   def self.perform!
     ActiveRecord::Base.transaction do
       COLOR_YML.first.each do |hash|
-        if hash != 'color'
-          hash.each do |color_params|
-            Product::ColorList.create color_params
-          end
-        end
+        hash.each do |color_params|
+          Product::ColorList.create color_params
+        end if hash != 'color'
       end
     end
   end
