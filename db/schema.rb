@@ -11,6 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140912112752) do
+
+  create_table "categories", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "color_lists", force: true do |t|
+    t.string   "name"
+    t.string   "hex"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "sub_categories", force: true do |t|
+    t.string  "name"
+    t.integer "category_id"
+  end
 
 end
