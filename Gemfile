@@ -26,4 +26,5 @@ group :development do
   gem 'spring'
   gem 'pry'
   gem 'reek'
+  gem 'pry-rails'
 end
