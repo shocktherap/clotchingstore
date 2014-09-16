@@ -30,5 +30,8 @@ module Product
 
     has_many :sizes, through: :product_sizes
     has_many :product_sizes
+
+    has_many :genders, through: :product_genders
+    has_many :product_genders
   end
 end
