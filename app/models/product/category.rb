@@ -8,7 +8,7 @@
 
 module Product
   class Category < ActiveRecord::Base
-    has_many :subcategories
-    has_many :products, through: :subcategories
+    has_many :sub_categories
+    has_many :products, through: :sub_categories
   end
 end
