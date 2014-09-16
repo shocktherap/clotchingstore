@@ -1,0 +1,34 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title"><%= @category.name %> Subcategory</h3>
+  </div>
+  <div class="panel-body">
+    <%= link_to 'New', new_backend_category_subcategory_path, class: 'btn btn-primary' %>
+    <div class="clearfix"></div>
+    <div class="pull-right">
+      <%= page_entries_info @subcategories %>
+    </div>
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @subcategories.each_with_index do |subcategory| %>
+          <tr>
+            <td><%= link_to subcategory.name, backend_category_path(subcategory) %></td>
+            <td>
+              <%= link_to 'Edit', edit_backend_category_subcategory_path(@category, subcategory) %>
+              <%= link_to 'Delete', backend_category_subcategory_path(@category, subcategory), method: :delete, data: { confirm: 'Are you sure to delete this link?' } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="panel-footer">
+    <%= paginate @subcategories %>
+  </div>
+</div>

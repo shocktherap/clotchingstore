@@ -1,0 +1,13 @@
+<%= form_failure_message @subcategory %>
+
+<%= form_for @subcategory, url: @subcategory.new_record? ? backend_category_subcategory_index_path : backend_category_subcategory_path(@category, @subcategory) ,html: { role: 'form' } do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit 'Save', class: 'btn btn-primary' %>
+    <%= link_to 'Back', backend_category_subcategory_index_path, class: 'btn btn-default' %>
+  </div>
+<% end %>
