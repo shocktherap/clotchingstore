@@ -1,12 +1,10 @@
 class SizeSeed
-  SIZE_YML = YAML.load(File.read('db/seeds/yml/size.yml'))
+  SIZE_YML = (26..34)
 
   def self.perform!
     ActiveRecord::Base.transaction do
-      SIZE_YML.first.each do |hash|
-        hash.each do |size_params|
-          Product::Size.create size_params
-        end if hash != 'size'
+      SIZE_YML.each do |hash|
+        Product::Size.find_or_create_by name: hash
       end
     end
   end
