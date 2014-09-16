@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140916004002) do
+ActiveRecord::Schema.define(version: 20140916180149) do
 
   create_table "categories", force: true do |t|
     t.string "name"
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20140916004002) do
   end
 
   create_table "sizes", force: true do |t|
-    t.string   "name"
+    t.integer  "name"
     t.integer  "height"
     t.integer  "width"
     t.datetime "created_at"
