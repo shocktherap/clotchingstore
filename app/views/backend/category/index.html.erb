@@ -1,0 +1,34 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Category</h3>
+  </div>
+  <div class="panel-body">
+    <%= link_to 'New', new_backend_category_path, class: 'btn btn-primary' %>
+    <div class="clearfix"></div>
+    <div class="pull-right">
+      <%= page_entries_info @categories %>
+    </div>
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @categories.each_with_index do |category| %>
+          <tr>
+            <td><%= link_to category.name, backend_category_path(category) %></td>
+            <td>
+              <%= link_to 'Edit', edit_backend_category_path(category) %>
+              <%= link_to 'Delete', backend_category_path(category), method: :delete, data: { confirm: 'Are you sure to delete this link?' } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="panel-footer">
+    <%= paginate @categories %>
+  </div>
+</div>

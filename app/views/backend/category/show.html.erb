@@ -1,0 +1,16 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Category Show</h3>
+  </div>
+  <div class="panel-body">
+    <dl>
+      <dt>Name</dt>
+      <dd><%= @category.name %></dd>
+    </dl>
+
+    <div class="form-group">
+      <%= link_to 'Edit', edit_backend_category_path(@category), class: 'btn btn-primary' %>
+      <%= link_to 'Back', backend_category_index_path, class: 'btn btn-default' %>
+    </div>
+  </div>
+</div>
