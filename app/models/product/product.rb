@@ -27,5 +27,8 @@ module Product
     has_many :discounts
     has_many :colors
     has_many :reviews
+
+    has_many :sizes, through: :product_sizes
+    has_many :product_sizes
   end
 end
