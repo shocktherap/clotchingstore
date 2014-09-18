@@ -18,6 +18,7 @@ gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem "slim"
 gem 'kaminari'
+gem 'thin'
 
 group :development do
   gem 'quiet_assets'
