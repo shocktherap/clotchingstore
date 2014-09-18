@@ -10,14 +10,24 @@
         </a>
       </li>
 
-      <li class="sub-menu">
-        <a class="<%= 'active' if ['category', 'subcategory'].include?(controller_name) %>" href="javascript:;" >
+      <li class="sub-menu dcjq-parent-li">
+        <a class="dcjq-parent <%= 'active' if ['category', 'subcategory'].include?(controller_name) %>" href="javascript:;" >
           <i class="fa fa-desktop"></i>
           <span>Product</span>
         </a>
         <ul class="sub">
           <li class="<%= 'active' if controller_name == 'category' %>"><%= link_to 'Category', backend_category_index_path %></li>
           <li class="<%= 'active' if controller_name == 'subcategory' %>"><%= link_to 'Subcategory', backend_subcategory_index_path %></li>
+        </ul>
+      </li>
+      <li class="sub-menu dcjq-parent-li">
+        <a class="dcjq-parent <%= 'active' if ['vendor', 'color'].include?(controller_name) %>" href="javascript:;" >
+          <i class="fa fa-book"></i>
+          <span>Prepare Product</span>
+        </a>
+        <ul class="sub">
+          <li class="<%= 'active' if controller_name == 'vendor' %>"><%= link_to 'Vendor', backend_vendor_index_path %></li>
+          <li class="<%= 'active' if controller_name == 'color' %>"><%= link_to 'Color', backend_color_index_path %></li>
         </ul>
       </li>
     </ul>
