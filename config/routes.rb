@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     resources :category do
       resources :subcategory
     end
+    resources :vendor
+    resources :color
   end
 end

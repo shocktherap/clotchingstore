@@ -1,0 +1,31 @@
+<h3><i class="fa fa-angle-right"></i> Product Merk</h3>
+<div class="row mt">
+  <div class="col-lg-12">
+    <div class="content-panel">
+      <section id="unseen">
+        <div class="unseen-margin">
+          <%= link_to 'New', new_backend_vendor_path, class: 'btn btn-theme03 pull-right button-margin' %>
+          <table class="table table-bordered table-striped table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @merks.each_with_index do |merk| %>
+                <tr>
+                  <td><%= link_to merk.name, backend_vendor_path(merk) %></td>
+                  <td>
+                    <%= link_to 'Edit', edit_backend_vendor_path(merk) %>
+                    <%= link_to 'Delete', backend_vendor_path(merk), method: :delete, data: { confirm: 'Are you sure to delete?' } %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
