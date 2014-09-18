@@ -1,9 +1,9 @@
 module Backend
   class SubcategoryController < Backend::ApplicationController
-    before_action :subcategory
+    before_action :subcategory, except: [:index]
 
     def index
-      @subcategories = category.sub_categories.page(params[:page])
+      @subcategories = Product::SubCategory.page(params[:page])
     end
 
     def new
@@ -12,7 +12,7 @@ module Backend
     def create
       if @subcategory.update_attributes product_sub_category_params
         flash[:success] = 'Subcategory Created'
-        redirect_to backend_category_subcategory_index_path(@category)
+        redirect_to backend_category_path(@category)
       else
         render action: :new
       end
@@ -27,7 +27,7 @@ module Backend
     def update
       if @subcategory.update_attributes product_sub_category_params
         flash[:success] = 'subcategory Updated'
-        redirect_to backend_category_subcategory_index_path(@category)
+        redirect_to backend_category_path(@category)
       else
         render action: :edit
       end
@@ -40,7 +40,7 @@ module Backend
         flash[:error] = 'Subcategory Failed to destroy'
       end
 
-      redirect_to backend_category_subcategory_index_path(@category)
+      redirect_to backend_category_path(@category)
     end
 
     private

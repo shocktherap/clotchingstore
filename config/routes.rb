@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :backend do
     get '/', to: 'home#index'
+    resources :subcategory, only: [:index]
     resources :category do
       resources :subcategory
     end

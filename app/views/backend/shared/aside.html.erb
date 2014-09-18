@@ -1,0 +1,26 @@
+<aside>
+  <div id="sidebar" class="nav-collapse " tabindex="5000" style="overflow: hidden; outline: none; margin-left: 0px;">
+    <ul class="sidebar-menu" id="nav-accordion">
+      <h5 class="centered">Marcel Newman</h5>
+
+      <li class="mt">
+        <a href="index.html">
+          <i class="fa fa-dashboard"></i>
+          <span>Home</span>
+        </a>
+      </li>
+
+      <li class="sub-menu">
+        <a class="<%= 'active' if controller_name == 'category' %>" href="javascript:;" >
+          <i class="fa fa-desktop"></i>
+          <span>Product</span>
+        </a>
+        <ul class="sub">
+          <li class="<%= 'active' if controller_name == 'category' %>"><%= link_to 'Category', backend_category_index_path %></li>
+          <li class="<%= 'active' if controller_name == 'subcategory' %>"><%= link_to 'Subcategory', backend_subcategory_index_path %></li>
+        </ul>
+      </li>
+    </ul>
+      <!-- sidebar menu end-->
+  </div>
+  </aside>

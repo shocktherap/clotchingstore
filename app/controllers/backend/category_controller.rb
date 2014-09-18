@@ -19,6 +19,7 @@ module Backend
     end
 
     def show
+      @subcategories = @category.sub_categories
     end
 
     def edit
