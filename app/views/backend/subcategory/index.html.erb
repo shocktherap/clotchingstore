@@ -4,6 +4,7 @@
     <div class="content-panel">
       <section id="unseen">
         <div class="unseen-margin">
+          <%= page_entries_info @categories %>
           <table class="table table-bordered table-striped table-condensed">
             <thead>
               <tr>
@@ -16,13 +17,18 @@
                 <tr>
                   <td><%= subcategory.name %></td>
                   <td>
-                    <%= link_to 'Edit', edit_backend_category_subcategory_path(category_id: subcategory.category_id, id: subcategory) %>
-                    <%= link_to 'Delete', backend_category_subcategory_path(subcategory.category_id, subcategory), method: :delete, data: { confirm: 'Are you sure to delete?' } %>
+                    <%= link_to edit_backend_category_subcategory_path(category_id: subcategory.category_id, id: subcategory), class: 'btn btn-primary btn-xs' do %>
+                      <i class="fa fa-pencil"></i>
+                    <% end %>
+                    <%= link_to backend_category_subcategory_path(subcategory.category_id, subcategory), method: :delete,class: 'btn btn-danger btn-xs',data: { confirm: 'Are you sure to delete?' } do %>
+                      <i class="fa fa-trash-o "></i>
+                    <% end %>
                   </td>
                 </tr>
               <% end %>
             </tbody>
           </table>
+          <%= paginate @categories %>
         </div>
       </section>
     </div>
