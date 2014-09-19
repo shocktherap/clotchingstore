@@ -4,7 +4,7 @@
     <div class="content-panel">
       <section id="unseen">
         <div class="unseen-margin">
-          <%= page_entries_info @categories %>
+          <%= page_entries_info @subcategories %>
           <table class="table table-bordered table-striped table-condensed">
             <thead>
               <tr>
@@ -28,7 +28,7 @@
               <% end %>
             </tbody>
           </table>
-          <%= paginate @categories %>
+          <%= paginate @subcategories %>
         </div>
       </section>
     </div>
