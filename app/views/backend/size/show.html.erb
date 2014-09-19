@@ -1,0 +1,21 @@
+<h3><i class="fa fa-angle-right"></i> Show Product Merk</h3>
+<div class="row mt">
+  <div class="col-lg-12">
+    <div class="content-panel">
+      <section id="unseen">
+        <div class="unseen-margin">
+          <div class="panel-body">
+            <dl>
+              <dt>Name</dt>
+              <dd><%= @size.name %></dd>
+            </dl>
+            <div class="form-group">
+              <%= link_to 'Edit', edit_backend_size_path(@size), class: 'btn btn-primary' %>
+              <%= link_to 'Back', backend_size_index_path, class: 'btn btn-default' %>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

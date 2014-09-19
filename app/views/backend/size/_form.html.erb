@@ -1,0 +1,13 @@
+<%= form_failure_message @size %>
+
+<%= form_for @size,url: @size.new_record? ? backend_size_index_path : backend_size_path(@size) ,html: { role: 'form' } do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control', placeholder: 'size Name' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit 'Save', class: 'btn btn-primary' %>
+    <%= link_to 'Back', backend_size_index_path, class: 'btn btn-default' %>
+  </div>
+<% end %>
