@@ -4,6 +4,7 @@
     <div class="content-panel">
       <section id="unseen">
         <div class="unseen-margin">
+          <%= page_entries_info @merks %>
           <%= link_to 'New', new_backend_vendor_path, class: 'btn btn-theme03 pull-right button-margin' %>
           <table class="table table-bordered table-striped table-condensed">
             <thead>
@@ -17,13 +18,18 @@
                 <tr>
                   <td><%= link_to merk.name, backend_vendor_path(merk) %></td>
                   <td>
-                    <%= link_to 'Edit', edit_backend_vendor_path(merk) %>
-                    <%= link_to 'Delete', backend_vendor_path(merk), method: :delete, data: { confirm: 'Are you sure to delete?' } %>
+                    <%= link_to edit_backend_vendor_path(merk), class: 'btn btn-primary btn-xs' do %>
+                      <i class="fa fa-pencil"></i>
+                    <% end %>
+                    <%= link_to backend_vendor_path(merk), method: :delete,class: 'btn btn-danger btn-xs',data: { confirm: 'Are you sure to delete?' } do %>
+                      <i class="fa fa-trash-o "></i>
+                    <% end %>
                   </td>
                 </tr>
               <% end %>
             </tbody>
           </table>
+          <%= paginate @merks %>
         </div>
       </section>
     </div>
