@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+load 'db/seeds/product/color_seed.rb'
+load 'db/seeds/product/gender_seed.rb'
+load 'db/seeds/product/size_seed.rb'
+
+ColorSeed.perform!
+GenderSeed.perform!
+SizeSeed.perform!

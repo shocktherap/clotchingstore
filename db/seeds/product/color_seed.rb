@@ -5,7 +5,7 @@ class ColorSeed
     ActiveRecord::Base.transaction do
       COLOR_YML.first.each do |hash|
         hash.each do |color_params|
-          Product::ColorList.create color_params
+          Product::ColorList.find_or_create_by color_params
         end if hash != 'color'
       end
     end
