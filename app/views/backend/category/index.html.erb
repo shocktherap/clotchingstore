@@ -4,6 +4,7 @@
     <div class="content-panel">
       <section id="unseen">
         <div class="unseen-margin">
+          <%= page_entries_info @categories %>
           <%= link_to 'New', new_backend_category_path, class: 'btn btn-theme03 pull-right button-margin' %>
           <table class="table table-bordered table-striped table-condensed">
             <thead>
@@ -17,13 +18,18 @@
                 <tr>
                   <td><%= link_to category.name, backend_category_path(category) %></td>
                   <td>
-                    <%= link_to 'Edit', edit_backend_category_path(category) %>
-                    <%= link_to 'Delete', backend_category_path(category), method: :delete, data: { confirm: 'Are you sure to delete?' } %>
+                    <%= link_to edit_backend_category_path(category), class: 'btn btn-primary btn-xs' do %>
+                      <i class="fa fa-pencil"></i>
+                    <% end %>
+                    <%= link_to backend_category_path(category), method: :delete,class: 'btn btn-danger btn-xs',data: { confirm: 'Are you sure to delete?' } do %>
+                      <i class="fa fa-trash-o "></i>
+                    <% end %>
                   </td>
                 </tr>
               <% end %>
             </tbody>
           </table>
+          <%= paginate @categories %>
         </div>
       </section>
     </div>
