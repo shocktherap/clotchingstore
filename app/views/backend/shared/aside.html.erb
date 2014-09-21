@@ -11,11 +11,12 @@
       </li>
 
       <li class="sub-menu dcjq-parent-li">
-        <a class="dcjq-parent <%= 'active' if ['category', 'subcategory'].include?(controller_name) %>" href="javascript:;" >
+        <a class="dcjq-parent <%= 'active' if ['category', 'subcategory', 'product'].include?(controller_name) %>" href="javascript:;" >
           <i class="fa fa-desktop"></i>
           <span>Product</span>
         </a>
         <ul class="sub">
+          <li class="<%= 'active' if controller_name == 'product' %>"><%= link_to 'Product', backend_product_index_path %></li>
           <li class="<%= 'active' if controller_name == 'category' %>"><%= link_to 'Category', backend_category_index_path %></li>
           <li class="<%= 'active' if controller_name == 'subcategory' %>"><%= link_to 'Subcategory', backend_subcategory_index_path %></li>
         </ul>

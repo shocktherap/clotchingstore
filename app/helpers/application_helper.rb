@@ -31,4 +31,12 @@ module ApplicationHelper
       messages.join('<br />').html_safe, class: "alert alert-danger"
     ) unless messages.blank?
   end
+
+  def merk_collection
+    Product::Merk.all.collect{|e| [e.name, e.id]}
+  end
+
+  def subcategories_collection
+    Product::SubCategory.all.collect{|e| [e.name, e.id]}
+  end
 end

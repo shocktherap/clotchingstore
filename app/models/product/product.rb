@@ -33,5 +33,6 @@ module Product
 
     has_many :genders, through: :product_genders
     has_many :product_genders
+    accepts_nested_attributes_for :colors, :sizes, :genders
   end
 end

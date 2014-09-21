@@ -1,0 +1,37 @@
+<h3><i class="fa fa-angle-right"></i> Product</h3>
+<div class="row mt">
+  <div class="col-lg-12">
+    <div class="content-panel">
+      <section id="unseen">
+        <div class="unseen-margin">
+          <%= page_entries_info @products %>
+          <%= link_to 'New', new_backend_product_path, class: 'btn btn-theme03 pull-right button-margin' %>
+          <table class="table table-bordered table-striped table-condensed">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @products.each_with_index do |product| %>
+                <tr>
+                  <td><%= link_to product.name, backend_product_path(product) %></td>
+                  <td>
+                    <%= link_to edit_backend_product_path(product), class: 'btn btn-primary btn-xs' do %>
+                      <i class="fa fa-pencil"></i>
+                    <% end %>
+                    <%= link_to backend_product_path(product), method: :delete,class: 'btn btn-danger btn-xs',data: { confirm: 'Are you sure to delete?' } do %>
+                      <i class="fa fa-trash-o "></i>
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <%= paginate @products %>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

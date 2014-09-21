@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :vendor
     resources :color
     resources :size
+    resources :product
   end
 end

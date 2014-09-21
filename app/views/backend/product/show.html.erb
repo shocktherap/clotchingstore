@@ -1,0 +1,43 @@
+<h3><i class="fa fa-angle-right"></i> Show Product Category</h3>
+<div class="row mt">
+  <div class="col-lg-12">
+    <div class="content-panel">
+      <section id="unseen">
+        <div class="unseen-margin">
+          <div class="panel-body">
+            <dl>
+              <dt>Name</dt>
+              <dd><%= @category.name %></dd>
+            </dl>
+
+            <table class="table table-bordered table-striped table-condensed">
+            <thead>
+              <tr>
+                  <th>Subcategory</th>
+                  <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @subcategories.each_with_index do |subcategory| %>
+                <tr>
+                  <td><%= subcategory.name %></td>
+                  <td>
+                    <%= link_to 'Edit', edit_backend_category_subcategory_path(@category, subcategory) %>
+                    <%= link_to 'Delete', backend_category_subcategory_path(@category, subcategory), method: :delete, data: { confirm: 'Are you sure to delete this link?' } %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+
+            <div class="form-group">
+              <%= link_to 'Edit', edit_backend_category_path(@category), class: 'btn btn-primary' %>
+              <%= link_to 'Back', backend_category_index_path, class: 'btn btn-default' %>
+              <%= link_to 'Add Sub Category', new_backend_category_subcategory_path(@category), class: 'btn btn-info' %>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
