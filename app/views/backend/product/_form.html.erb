@@ -1,6 +1,6 @@
 <%= form_failure_message @product %>
 
-<%= nested_form_for @product,url: @product.new_record? ? backend_product_index_path : backend_product_path(@product) ,html: { role: 'form' } do |f| %>
+<%= form_for @product,url: @product.new_record? ? backend_product_index_path : backend_product_path(@product) ,html: { role: 'form' } do |f| %>
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
