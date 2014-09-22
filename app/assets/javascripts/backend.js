@@ -6,4 +6,5 @@
 //= require jquery.nicescroll
 //= require jquery.sparkline
 //= require common-scripts
+//= require jquery_ujs
 */
